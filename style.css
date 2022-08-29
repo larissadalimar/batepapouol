@@ -8,7 +8,14 @@ body > div {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
 
 .login{
     margin-top: 72px;
@@ -101,7 +108,7 @@ body > div {
     position: absolute;
     width: 26px;
     height: 26px;
-    z-index:3;
+    z-index: 3;
     right: 17px;
 }
 
@@ -111,9 +118,9 @@ body > div {
     border: 0px;
 }
 
-.chat {
-    margin-top: 100px;
-    margin-bottom: 95px;
+.mensagens {
+    margin-top: 90px;
+    margin-bottom: 90px;
 }
 
 .chat li {

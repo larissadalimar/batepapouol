@@ -10,6 +10,12 @@ function pegaNome(){
         name: nome
     })
 
+    const login = document.querySelector('.login')
+    login.classList.add('hide')
+
+    const loading = document.querySelector('.loading')
+    loading.classList.remove('hide')
+
     promisse.then(conexao)
     promisse.catch(novoNome)
 
@@ -17,12 +23,10 @@ function pegaNome(){
 
 function conexao(response){
 
-    const login = document.querySelector('.login')
-
-    login.classList.add('hide')
+    const loading = document.querySelector('.loading')
+    loading.classList.add('hide')
 
     const sala = document.querySelector('.sala')
-
     sala.classList.remove('hide')
 
     carregaChat()
@@ -92,9 +96,10 @@ function mantemConexao(){
 
 
 function saiDaSala(response){
-    alert('Saiu da sala')
+    
     clearInterval(idInterval)
     clearInterval(idIntervalChat)
+    alert('Saiu da sala')
 
     const login = document.querySelector('.login')
 
@@ -106,6 +111,12 @@ function saiDaSala(response){
 }
 
 function novoNome(response){
+    const loading = document.querySelector('.loading')
+    loading.classList.add('hide')
+
+    const login = document.querySelector('.login')
+    login.classList.remove('hide')
+
     switch(response.response.status){
         case 400:
             return alert('Esse nome já existe, entre com outro.')
